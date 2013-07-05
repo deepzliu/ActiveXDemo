@@ -1,0 +1,51 @@
+// ScreenCaptureX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(ScreenCaptureX.tlb)，该类型库将成为
+// ScreenCaptureX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(0BE5A501-1030-48ED-A7CF-675DF8ECDE45), version(1.0),
+  control ]
+library ScreenCaptureXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CScreenCaptureXCtrl 的主调度接口
+	[ 
+		uuid(23FA8459-94D0-43C1-8122-09BDBF252183)	
+	]
+	dispinterface _DScreenCaptureX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  CScreenCaptureXCtrl 的事件调度接口
+
+	[ 
+		uuid(F0D0F0D8-D8A2-45D4-96B1-A3AE62D9B7CC)	
+	]
+	dispinterface _DScreenCaptureXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CScreenCaptureXCtrl 的类信息
+	[
+		uuid(4E491DBB-A221-4B86-A740-74CDC5AF53A5)
+	]
+	coclass ScreenCaptureX
+	{
+		[default] dispinterface _DScreenCaptureX;
+		[default, source] dispinterface _DScreenCaptureXEvents;
+	};
+
+};

@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>MyActiveX - Methods, Properties, and Events</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function PassParameter()
+{
+	if (StringInput.value != " ")
+	{
+		MyActiveX1.InputParameter = StringInput.value;
+		MyActiveX1.LoadParameter();
+	}
+}
+</SCRIPT>
+
+</HEAD>
+<BODY>
+<center>
+MyActiveX - Methods, Properties, and Events Example
+<p></p>
+
+<OBJECT ID="MyActiveX1" WIDTH=350 HEIGHT=50
+ CLASSID="CLSID:36299202-09EF-4ABF-ADB9-47C599DBE778">
+    <PARAM NAME="_Version" VALUE="65536">
+    <PARAM NAME="_ExtentX" VALUE="2646">
+    <PARAM NAME="_ExtentY" VALUE="1323">
+    <PARAM NAME="_StockProps" VALUE="0">
+</OBJECT>
+<p></p>
+
+Input Parameter: <INPUT TYPE ="text" NAME="StringInput" VALUE=" ">
+<p></p>
+<INPUT TYPE="button" NAME="Submit" VALUE="Submit" ONCLICK=PassParameter()>
+
+<SCRIPT FOR=MyActiveX1 EVENT=ParameterLoaded()>
+<!-- {
+	window.document.write("The parameter you entered is:<br> " + MyActiveX1.OutputParameter + "  ")
+-->
+</SCRIPT>
+
+
+</center>
+</BODY>
+</HTML>

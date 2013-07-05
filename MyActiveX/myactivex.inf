@@ -1,0 +1,14 @@
+[Add.Code]
+myactivex.ocx=myactivex.ocx
+myactivex.inf=myactivex.inf
+
+[myactivex.ocx]
+file=thiscab
+clsid={36299202-09EF-4ABF-ADB9-47C599DBE778}
+RegisterServer=yes
+FileVersion=1,0,0,1
+
+[myactivex.inf]
+file=thiscab
+
+

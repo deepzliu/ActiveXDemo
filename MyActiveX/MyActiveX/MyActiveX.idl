@@ -1,0 +1,54 @@
+// MyActiveX.idl : type library source for ActiveX Control project.
+
+// This file will be processed by the MIDL compiler tool to
+// produce the type library (MyActiveX.tlb) that will become a resource in
+// MyActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(CBE9E0B0-95DB-4495-8BE8-E4CB416EF07D), version(1.0),
+  helpfile("MyActiveX.hlp"),
+  helpstring("MyActiveX ActiveX Control module"),
+  control ]
+library MyActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  Primary dispatch interface for CMyActiveXCtrl
+
+	[ uuid(98AF8A06-7DFE-472D-A713-A0C6F22FDC3D),
+	  helpstring("Dispatch interface for MyActiveX Control")]
+	dispinterface _DMyActiveX
+	{
+		properties:
+			[id(1) , helpstring("property InputParameter")] BSTR InputParameter;
+			[id(2) , helpstring("property OutputParameter")] BSTR OutputParameter;
+	methods:
+		[id(3), helpstring("method LoadParameter")] void LoadParameter(void);
+	};
+
+	//  Event dispatch interface for CMyActiveXCtrl
+
+	[ uuid(78099343-A8FF-4867-A537-06F31034F22B),
+	  helpstring("Event interface for MyActiveX Control") ]
+	dispinterface _DMyActiveXEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			[id(1)] void ParameterLoaded(void);
+	};
+
+	//  Class information for CMyActiveXCtrl
+
+	[ uuid(36299202-09EF-4ABF-ADB9-47C599DBE778),
+	  helpstring("MyActiveX Control"), control ]
+	coclass MyActiveX
+	{
+		[default] dispinterface _DMyActiveX;
+		[default, source] dispinterface _DMyActiveXEvents;
+	};
+
+};

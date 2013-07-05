@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>Upload</display-name>
+    <servlet>
+        <servlet-name>upload-invoker</servlet-name>
+        <servlet-class>com.sohu.action.Upload</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>upload-invoker</servlet-name>
+    	<url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>uploadFileMessage-invoker</servlet-name>
+        <servlet-class>com.sohu.action.UploadFileMessage</servlet-class>
+    </servlet>
+	
+    <servlet-mapping>
+        <servlet-name>uploadFileMessage-invoker</servlet-name>
+    	<url-pattern>/fileMessage</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>uploadProgress-invoker</servlet-name>
+        <servlet-class>com.sohu.action.UploadProgress</servlet-class>
+    </servlet>
+	
+    <servlet-mapping>
+        <servlet-name>uploadProgress-invoker</servlet-name>
+    	<url-pattern>/uploadProgress</url-pattern>
+    </servlet-mapping>
+	
+    <!-- The Usual Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
